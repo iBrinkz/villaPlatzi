@@ -7,6 +7,6 @@ for(i = 0; i < 10; i++){
 }
 
 function aleatoreo(min, max){
-    resultado = Math.floor(Math.random() * (min - max + 1)) + min;
+    resultado = Math.floor(Math.random() * (max - min + 1)) + min;
     return resultado;
 }
