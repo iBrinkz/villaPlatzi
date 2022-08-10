@@ -62,7 +62,7 @@ function cargarPollos(){
     pollo.cargaOK = true;
     dibujar();
 }
-var n = 0;
+
 function dibujar(){
     //dibuja 4 veces el fondo ya que hay 3 imagenes mas
     if(fondo.cargaOK){
@@ -71,22 +71,28 @@ function dibujar(){
         
     if(vaca.cargaOK){
         for(i =0; i < numVacas; i++){
-            x = aleatoreo(0, 420);
-            y = aleatoreo(0, 420);
+            x = aleatoreo(0, 10);
+            y = aleatoreo(0, 10);
+            x = x * 40;
+            y = y * 40;
             papel.drawImage(vaca.imagen, x, y);
         }
     }
     if(cerdo.cargaOK){
         for(i = 0; i < numCerdos; i++){
-            x = aleatoreo(0, 420);
-            y = aleatoreo(0, 420);
+            x = aleatoreo(0, 10);
+            y = aleatoreo(0, 10);
+            x = x * 40;
+            y = y * 40;
             papel.drawImage(cerdo.imagen, x, y);
         }
     }
     if(pollo.cargaOK){
         for(i = 0; i < numPollos; i++){
-            x = aleatoreo(0, 420);
-            y = aleatoreo(0, 420);
+            x = aleatoreo(0, 10);
+            y = aleatoreo(0, 10);
+            x = x * 40;
+            y = y * 40;
             papel.drawImage(pollo.imagen, x, y);
         }
     }
