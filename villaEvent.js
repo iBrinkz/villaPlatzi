@@ -29,6 +29,12 @@ var pollo = {
     url: "pollo.webp",
     cargaOk: false
 };
+var limite = {
+    IZQUIERDO: 0,
+    DERECHO: 420,
+    ARRIBA: 0,
+    ABAJO: 420
+};
 var teclas = {
     UP: 38,
     DOWN: 40,
@@ -60,19 +66,27 @@ function dibujarTeclado(evento){
 
     switch(evento.keyCode){
         case teclas.DOWN:
-            cerdoY = cerdoY + desplazamiento;
+            if(cerdoY<=limite.ABAJO){
+                cerdoY = cerdoY + desplazamiento;
+            }
             dibujar();
         break;
         case teclas.UP:
-            cerdoY = cerdoY - desplazamiento;
+            if(cerdoY>=limite.ARRIBA){
+                cerdoY = cerdoY - desplazamiento;
+            }
             dibujar();
         break;
         case teclas.LEFT:
-            cerdoX = cerdoX - desplazamiento;
+            if(cerdoX>=limite.IZQUIERDO){
+                cerdoX = cerdoX - desplazamiento;
+            }
             dibujar();
         break;
         case teclas.RIGHT:
-            cerdoX = cerdoX + desplazamiento;
+            if(cerdoX<=limite.DERECHO){
+                cerdoX = cerdoX + desplazamiento;
+            }
             dibujar();
         break;
         default:
@@ -134,7 +148,9 @@ function dibujar(){
         }
     }
     if(cerdo.cargaOK){
-        papel.drawImage(cerdo.imagen, cerdoX, cerdoY);
+
+            papel.drawImage(cerdo.imagen, cerdoX, cerdoY);
+  
     }
 }
 //Genera un numero aleatoreo
